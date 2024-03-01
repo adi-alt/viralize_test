@@ -12,6 +12,9 @@ function App() {
         <nav>
           <ul style={{ display: 'flex', justifyContent: 'center', listStyle: 'none', padding: 0 }}>
             <li style={{ marginRight: '10px' }}>
+              <Link to="/">Home</Link>
+            </li>
+            <li style={{ marginRight: '10px' }}>
               <Link to="/bullet">Bullet</Link>
             </li>
             <li style={{ marginRight: '10px' }}>
