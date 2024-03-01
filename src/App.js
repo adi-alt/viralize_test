@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Bullet from './Bullet';
+import Blitz from './Blitz';
+import Rapid from './Rapid';
+import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul style={{ display: 'flex', justifyContent: 'center', listStyle: 'none', padding: 0 }}>
+            <li style={{ marginRight: '10px' }}>
+              <Link to="/bullet">Bullet</Link>
+            </li>
+            <li style={{ marginRight: '10px' }}>
+              <Link to="/blitz">Blitz</Link>
+            </li>
+            <li>
+              <Link to="/rapid">Rapid</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+         <Route path="/" element={<Home/>} />
+          <Route path="/bullet" element={<Bullet />} />
+          <Route path="/blitz" element={<Blitz />} />
+          <Route path="/rapid" element={<Rapid />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
